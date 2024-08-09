@@ -1,0 +1,1 @@
+Estou a considerar a ref antes d[este commit](https://github.com/sphincs/sphincsplus/commit/7ec789ace6874d875f4bb84cb61b81155398167e). Se considerar esse commit, os testes do address falham

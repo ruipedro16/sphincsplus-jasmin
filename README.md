@@ -2,7 +2,7 @@
 
 ## Ref 
 
-- [ ] Address
+- [X] Address => [ver este commit](https://github.com/sphincs/sphincsplus/commit/7ec789ace6874d875f4bb84cb61b81155398167e)
 - [ ] SHAKE (Fips202)
     - [ ] array
     - [ ] ptr 
@@ -25,7 +25,6 @@
 ## ETC
 
 - [ ] Benchmarks
-
 
 ## Stdlib
 
