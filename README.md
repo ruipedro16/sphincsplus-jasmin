@@ -15,7 +15,11 @@
 - [ ] WOTSX1
 - [ ] Merkle
 - [ ] Sign
- 
+
+### TODO 
+
+- [ ] Fix param files (*.h -> *.jinc)
+
 ## AVX2
 
 ## ETC
