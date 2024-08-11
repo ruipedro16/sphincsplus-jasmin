@@ -9,7 +9,8 @@
     - [X] out_ptr
         - [ ] TODO: Fix extra assignment warning
         - [ ] TODO: Refazer testes sem malloc/free
-    - [ ] inc
+    - [X] inc
+        - [ ] TODO: FIXME: Fix regalloc   
 - [ ] Hash
 - [ ] Thash
     - [ ] simple
