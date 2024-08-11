@@ -11,9 +11,6 @@ JAZZCT   ?= jazzct
 JFLAGS   ?= ${JADDFLAGS}
 JINCLUDE ?= -I Sphincs:../../../ref-jasmin/
 
-JPP          ?= ../../submodules/jasmin-preprocessor/jpp
-PREPROCESSOR ?= ../../../submodules/jasmin-preprocessor/preprocessor
-
 # --------------------------------------------------------------------------------------------------
 
 TESTS := bin/test_shake256_ptr
@@ -29,7 +26,6 @@ default: $(TESTS)
 all: $(ASM_FILES) $(OBJ_FILES) $(CT_FILES) $(TESTS)
 run: $(OUT)
 
-jpp_files: $(JPP_FILES)
 asm_files: $(ASM_FILES)
 obj_files: $(OBJ_FILES)
 check_ct:  $(CT_FILES)
