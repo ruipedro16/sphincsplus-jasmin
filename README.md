@@ -11,7 +11,7 @@
         - [ ] TODO: Refazer testes sem malloc/free
     - [X] inc
         - [ ] TODO: FIXME: Fix regalloc   
-- [ ] Hash
+- [ ] Hash (TODO: Fix C compilation + Unused variables warnings)
 - [ ] Thash
     - [ ] simple
     - [ ] robust 
@@ -24,6 +24,7 @@
 ### TODO 
 
 - [ ] Fix generation of param files (*.h -> *.jinc)
+- [ ] Rewrite wrappers
 
 ## AVX2
 
