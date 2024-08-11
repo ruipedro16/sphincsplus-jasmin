@@ -10,7 +10,7 @@
 #include "print.c"
 
 #ifndef TESTS
-#define TESTS 1
+#define TESTS 100
 #endif
 
 extern void shake256_ptr_jazz(uint8_t *out, size_t outlen, const uint8_t *in, size_t inlen);

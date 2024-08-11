@@ -4,12 +4,14 @@
 
 - [X] Address => [ver este commit](https://github.com/sphincs/sphincsplus/commit/7ec789ace6874d875f4bb84cb61b81155398167e)
 - [ ] SHAKE (Fips202)
-    - [ ] array
+    - [X] array
     - [X] ptr (from libjade) (TODO: generate jpp file before compiling)
     - [ ] out_ptr
     - [ ] inc
 - [ ] Hash
 - [ ] Thash
+    - [ ] simple
+    - [ ] robust 
 - [ ] WOTS
 - [ ] FORS
 - [ ] WOTSX1
@@ -18,7 +20,7 @@
 
 ### TODO 
 
-- [ ] Fix param files (*.h -> *.jinc)
+- [ ] Fix generation of param files (*.h -> *.jinc)
 
 ## AVX2
 
