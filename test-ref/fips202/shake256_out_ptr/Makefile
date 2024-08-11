@@ -16,22 +16,18 @@ PREPROCESSOR ?= ../../../submodules/jasmin-preprocessor/preprocessor
 
 # --------------------------------------------------------------------------------------------------
 
-OUTLEN_LIST ?= 1 31 32 33 63 64 65 95 96 97 127 128 129 135 136 137 159 160\
-161 191 192 193 223 224 225 255 256 257 270 271 272
-
 INLEN_LIST  ?= 1 31 32 33 63 64 65 95 96 97 127 128 129 135 136 137 159 160\
 161 191 192 193 223 224 225 255 256 257 270 271 272
 
-TLIST := $(foreach O,$(OUTLEN_LIST), $(foreach I,$(OUTLEN_LIST), $(O)_$(I)))
+TLIST := $(foreach I,$(INLEN_LIST), $(I))
 
 # --------------------------------------------------------------------------------------------------
 
-GET_OUTLEN  = $(word 1, $(subst _, ,$*))
-GET_INLEN   = $(word 2, $(subst _, ,$*))
+GET_INLEN = $(word 1, $(subst _, ,$*))
 
 # --------------------------------------------------------------------------------------------------
 
-TESTS := $(addprefix bin/test_shake256_array_, $(TLIST))
+TESTS := $(addprefix bin/test_shake256_out_ptr_, $(TLIST))
 OUT   := $(addsuffix .out, $(TESTS))
 
 JPP_FILES := $(addsuffix .jpp, $(TESTS))
@@ -57,29 +53,29 @@ $(OBJ_FILES):
 	$(AS) $< -o $@
 
 $(JPP_FILES):
-.PRECIOUS: bin/test_shake256_array_%.jpp
-bin/test_shake256_array_%.jpp: test_shake256_array.jazz | bin/
+.PRECIOUS: bin/test_shake256_out_ptr_%.jpp
+bin/test_shake256_out_ptr_%.jpp: test_shake256_out_ptr.jazz | bin/
 	cp $< $@
 	$(JPP) $(JINCLUDE) -in $@ -out $@
-	$(PREPROCESSOR) --input_file $@ --output_file $@ --task "fn:shake256  p:OUTLEN:$(GET_OUTLEN) p:INLEN:$(GET_INLEN)"
+	$(PREPROCESSOR) --input_file $@ --output_file $@ --task "fn:shake256_out_ptr p:INLEN:$(GET_INLEN)"
 
 $(ASM_FILES):
-.PRECIOUS: bin/test_shake256_array_%.s
-bin/test_shake256_array_%.s: bin/test_shake256_array_%.jpp
+.PRECIOUS: bin/test_shake256_out_ptr_%.s
+bin/test_shake256_out_ptr_%.s: bin/test_shake256_out_ptr_%.jpp
 	$(JASMIN) $(JFLAGS) $< -o $@
 
 $(CT_FILES):
-.PRECIOUS: bin/test_shake256_array_%.s
-bin/test_shake256_array_%.ct: bin/test_shake256_array_%.jpp
+.PRECIOUS: bin/test_shake256_out_ptr_%.s
+bin/test_shake256_out_ptr_%.ct: bin/test_shake256_out_ptr_%.jpp
 	$(JAZZCT) --infer $< > $@
 
 $(TESTS):
-bin/test_shake256_array_%: bin/test_shake256_array_%.s | bin/
-	$(CC) $(CFLAGS) -o $@ -DOUTLEN=$(GET_OUTLEN) -DINLEN=$(GET_INLEN) \
-	-I../../common -I../ test_shake256_array.c $< ../../fips202.c
+bin/test_shake256_out_ptr_%: bin/test_shake256_out_ptr_%.s | bin/
+	$(CC) $(CFLAGS) -o $@ -DINLEN=$(GET_INLEN) \
+	-I../../common -I../ test_shake256_out_ptr.c $< ../../fips202.c
 
 $(OUT):
-bin/test_shake256_array_%.out: bin/test_shake256_array_%
+bin/test_shake256_out_ptr_%.out: bin/test_shake256_out_ptr_%
 	@./$<
 
 # --------------------------------------------------------------------------------------------------

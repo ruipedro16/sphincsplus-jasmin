@@ -6,7 +6,9 @@
 - [ ] SHAKE (Fips202)
     - [X] array
     - [X] ptr (from libjade) (TODO: generate jpp file before compiling)
-    - [ ] out_ptr
+    - [X] out_ptr
+        - [ ] TODO: Fix extra assignment warning
+        - [ ] TODO: Refazer testes sem malloc/free
     - [ ] inc
 - [ ] Hash
 - [ ] Thash
