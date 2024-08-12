@@ -3,7 +3,7 @@
 ## Ref 
 
 - [X] Address => [ver este commit](https://github.com/sphincs/sphincsplus/commit/7ec789ace6874d875f4bb84cb61b81155398167e)
-- [ ] SHAKE (Fips202)
+- [X] SHAKE (Fips202)
     - [X] array
     - [X] ptr (from libjade) (TODO: generate jpp file before compiling)
     - [X] out_ptr
@@ -12,9 +12,11 @@
     - [X] inc
         - [ ] TODO: FIXME: Fix regalloc   
 - [ ] Hash (TODO: Fix C compilation + Unused variables warnings)
-- [ ] Thash
-    - [ ] simple
-    - [ ] robust 
+- [X] Thash
+    - [X] simple
+    - [X] robust 
+    - [ ] Fix extra assignment & unused variable warnings
+- [ ] Utilsx1 (compute root)
 - [ ] WOTS
 - [ ] FORS
 - [ ] WOTSX1

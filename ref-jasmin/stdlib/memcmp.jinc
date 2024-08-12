@@ -7,7 +7,7 @@ inline fn __memcmp<INLEN>(reg ptr u8[INLEN] a b) -> reg u8 {
     acc = 0;
   
     i = 0;
-    while (i < XMSS_N) {
+    while (i < INLEN) {
         t = a[i];
         t ^= b[i];
         acc |= t;
