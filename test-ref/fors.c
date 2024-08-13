@@ -26,7 +26,7 @@ struct fors_gen_leaf_info {
     uint32_t leaf_addrx[8];
 };
 
-static void fors_gen_leafx1(unsigned char *leaf,
+void fors_gen_leafx1(unsigned char *leaf,
                             const spx_ctx *ctx,
                             uint32_t addr_idx, void *info)
 {

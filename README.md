@@ -16,7 +16,8 @@
     - [X] simple
     - [X] robust 
     - [ ] Fix extra assignment & unused variable warnings
-- [ ] Utilsx1 (compute root)
+- [X] Utils (compute root)
+    - [ ] Move 8 bytes at a time 
 - [ ] WOTS
 - [ ] FORS
 - [ ] WOTSX1
